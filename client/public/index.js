@@ -1,6 +1,10 @@
 // allows us to use doc methods like setAttribute
 
 $ = queryString => document.querySelector(queryString);
+
+const randomNum = num => {
+  return Math.floor(Math.random() * num);
+};
 let knots = document.querySelectorAll("a-torus-knot");
 let dodecs = document.querySelectorAll("a-dodecahedron");
 
@@ -52,7 +56,9 @@ const animateSpheres = () => {
   });
   requestAnimationFrame(animateSpheres);
 };
+//---------SKY BOARD----------//
 
 // // for starting animation
-requestAnimationFrame(animateSpheres);
-requestAnimationFrame(animateTorus);
+
+//requestAnimationFrame(animateSpheres);
+//requestAnimationFrame(animateTorus);
