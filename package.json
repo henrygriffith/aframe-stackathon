@@ -1,0 +1,24 @@
+{
+  "name": "aframe-stackathon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henrygriffith/aframe-stackathon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/henrygriffith/aframe-stackathon/issues"
+  },
+  "homepage": "https://github.com/henrygriffith/aframe-stackathon#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "lodash": "^4.17.15"
+  }
+}
