@@ -448,29 +448,29 @@
         });
 
         //--FLOOR PLANES-- // Commented out for now
-        const floorBoard = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-        let floorStats = {
-          width: 5,
-          height: 5,
-          depth: 5
-        };
-        let floors = document.querySelector("#box-cluster");
-        for (let i = 0; i < Math.sqrt(floorBoard.length); i++) {
-          for (let j = 0; j < Math.sqrt(floorBoard.length); j++) {
-            let pos_Z = -1 * i * floorStats.height - 4;
-            let pos_X = j * floorStats.width;
-            const pos_Y = 0;
+        // const floorBoard = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+        // let floorStats = {
+        //   width: 5,
+        //   height: 5,
+        //   depth: 5
+        // };
+        // let floors = document.querySelector("#box-cluster");
+        // for (let i = 0; i < Math.sqrt(floorBoard.length); i++) {
+        //   for (let j = 0; j < Math.sqrt(floorBoard.length); j++) {
+        //     let pos_Z = -1 * i * floorStats.height - 4;
+        //     let pos_X = j * floorStats.width;
+        //     const pos_Y = 0;
 
-            let current = document.createElement("a-plane");
-            floors.appendChild(current);
-            current.setAttribute('material', 'src: #floor; repeat: 5 5; normal-map: #floor-NRM; normal-texture-repeat: 5 5; roughness: #floor-R')
-            current.setAttribute("body", "type: static");
-            current.setAttribute("rotation", "-90 0 0");
-            current.setAttribute('scale', '10 10 1')
-            current.setAttribute("width", `${floorStats.width}`);
-            current.setAttribute("height", `${floorStats.height}`);
-            floorBoard[i] == current.setAttribute("color", "lightgray");
-            current.setAttribute("position", `${pos_X} ${pos_Y} ${pos_Z}`);
+        //     let current = document.createElement("a-plane");
+        //     floors.appendChild(current);
+        //     current.setAttribute('material', 'src: #floor; repeat: 5 5; normal-map: #floor-NRM; normal-texture-repeat: 5 5; roughness: #floor-R')
+        //     current.setAttribute("body", "type: static");
+        //     current.setAttribute("rotation", "-90 0 0");
+        //     current.setAttribute('scale', '10 10 1')
+        //     current.setAttribute("width", `${floorStats.width}`);
+        //     current.setAttribute("height", `${floorStats.height}`);
+        //     floorBoard[i] == current.setAttribute("color", "lightgray");
+        //     current.setAttribute("position", `${pos_X} ${pos_Y} ${pos_Z}`);
         //   }
         // }
       </script>
