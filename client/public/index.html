@@ -2,8 +2,9 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    
+    
     <!------------- BOUNC COMPONENT ----------------->
     <script>
       AFRAME.registerComponent("bounce", {
@@ -39,108 +40,188 @@
     <a-scene physics="debug: false; gravity: -9.8;">
       <!-- ASSET MANAGEMENT SYSTEM -->
       <a-assets>
-        <img id="floor" src='static/sand.jpg'>
-        <img id='floor-NRM' src='static/sand-NRM.jpg'>
-        <img id='floor-R' src='static/sand-R.jpg'>
-        <img id='pyramid' src='static/pyramid.jpg'>
-        <img id='pyramid-NRM' src='static/pyramid-NRM.jpg'>
-        <img id='pyramid-R' src='static/pyramid-R.jpg'>
+        <img id="floor" src="static/sand.jpg" />
+        <img id="floor-NRM" src="static/sand-NRM.jpg" />
+        <img id="floor-R" src="static/sand-R.jpg" />
+        <img id="pyramid" src="static/pyramid.jpg" />
+        <img id="pyramid-NRM" src="static/pyramid-NRM.jpg" />
+        <img id="pyramid-R" src="static/pyramid-R.jpg" />
       </a-assets>
 
-      
-      
-
       <!-- LIGHT -->
-      <!-- <a-light type='directional' intensity='2.0' position='-10 1 10'></a-light> -->
+      <!-- <a-light type='directional' intensity='1.5' position='-10 1 10'></a-light> -->
 
       <!-- CAMERA && CURSOR-->
       <!-- cursor="fuse: true; fuseTimeout: 500" 
       position="0 0 -1"
           geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
           material="color: gray; shader: flat"-->
-      <a-entity camera look-controls wasd-controls position="-8 1.6 11">
-        <a-entity
-          cursor="rayOrigin: mouse"
-        >
-        </a-entity>
+      <a-entity camera look-controls wasd-controls position="-6 1.6 20">
+        <a-entity cursor="rayOrigin: mouse"> </a-entity>
       </a-entity>
 
       <!-- INTERACTIVE SIGNS -->
-      <a-entity position='-15 1.5 7'>
-      <a-entity id="gravity-sign1" geometry="primitive: plane"  material='color: lightblue' position='0 2 0' rotation='0 45 0' side='double'>
-        <a-text
-          line-height='2'
-          color="white"
-          value="Gravity - 1"
-          width="7"
-          height="7"
-          position='-.5 0 0'
-        ></a-text>
-      </a-entity>
-      <a-entity id="gravity-sign2" geometry="primitive: plane"  material='color: lightblue' position='0 4 0' rotation='0 45 0' side='double'>
+      <!-- GRAVITY -->
+      <a-entity position="-17 1.5 7">
+        <a-entity
+          id="gravity-sign1"
+          geometry="primitive: plane"
+          material="color: blue"
+          scale="3 1 1"
+          position="0 2 0"
+          rotation="0 45 0"
+          side="double"
+        >
           <a-text
-            line-height='2'
+            line-height="2"
+            color="white"
+            value="Gravity - 1"
+            width="4"
+            scale="1 3 1"
+            height="5"
+            position="-.4 0 0"
+          ></a-text>
+        </a-entity>
+        <a-entity
+          id="gravity-sign2"
+          geometry="primitive: plane"
+          material="color: blue"
+          position="0 4 0"
+          scale="3 1 1"
+          rotation="0 45 0"
+          side="double"
+        >
+          <a-text
+            line-height="2"
             color="white"
             value="Gravity + 1"
-            width="7"
-            height="7"
-            position='-.5 0 0'
+            width="4"
+            height="5"
+            scale="1 3 1"
+            position="-.4 0 0"
           ></a-text>
-      </a-entity>
-      <a-entity id="reset" geometry="primitive: plane"  material='color: lightblue' position='0 0 0' rotation='0 45 0' side='double'>
+        </a-entity>
+        <a-entity
+          id="float"
+          geometry="primitive: plane"
+          material="color: blue"
+          scale="3 1 1"
+          position="0 6 0"
+          rotation="0 45 0"
+          side="double"
+        >
           <a-text
-            line-height='2'
+            line-height="2"
+            color="white"
+            value="FLOAT"
+            width="4"
+            height="9"
+            scale="1 3 1"
+            position="-.3 0 0"
+          ></a-text>
+        </a-entity>
+        <a-entity
+          id="reset"
+          geometry="primitive: plane"
+          material="color: blue"
+          position="0 0 0"
+          scale="3 1 1"
+          rotation="0 45 0"
+          side="double"
+        >
+          <a-text
+            line-height="6"
             color="white"
             value="RESET PHYSICS"
-            width="7"
-            height="7"
-            position='-.5 0 0'
+            width="3"
+            height="9"
+            scale="1 3 1"
+            position="-.5 0 0"
           ></a-text>
+        </a-entity>
       </a-entity>
-    </a-entity>
-
-    <a-entity position='-18 1.5 11'>
-        <a-entity id="rain-spheres" geometry="primitive: plane"  material='color: lightblue' position='0 0 0' rotation='0 45 0' side='double'>
-            <a-text
-              line-height='2'
-              color="white"
-              value="RAIN SPHERES"
-              width="7"
-              height="7"
-              position='-.5 0 0'
-            ></a-text>
+      <!-- SHAPES -->
+      <a-entity position="-20 1.5 11">
+        <a-entity
+          id="rain-spheres"
+          geometry="primitive: plane"
+          material="color: blue"
+          position="0 0 0"
+          scale="3 1 1"
+          rotation="0 45 0"
+          side="double"
+        >
+          <a-text
+            line-height="2"
+            color="white"
+            value="RAIN SPHERES"
+            width="3"
+            height="7"
+            scale="1 3 1"
+            position="-.45 0 0"
+          ></a-text>
         </a-entity>
-        <a-entity id="rain-chips" geometry="primitive: plane"  material='color: lightblue' position='0 2 0' rotation='0 45 0' side='double'>
-            <a-text
-              line-height='2'
-              color="white"
-              value="RAIN CHIPS"
-              width="7"
-              height="7"
-              position='-.5 0 0'
-            ></a-text>
+        <a-entity
+          id="rain-chips"
+          geometry="primitive: plane"
+          material="color: blue"
+          position="0 2 0"
+          scale="3 1 1"
+          rotation="0 45 0"
+          side="double"
+        >
+          <a-text
+            line-height="2"
+            color="white"
+            value="RAIN CHIPS"
+            width="3"
+            scale="1 3 1"
+            height="7"
+            position="-.4 0 0"
+          ></a-text>
         </a-entity>
-    </a-entity>
+        <a-entity
+          id="remove-all"
+          geometry="primitive: plane"
+          material="color: blue"
+          position="0 4 0"
+          scale="3 1 1"
+          rotation="0 45 0"
+          side="double"
+        >
+          <a-text
+            line-height="2"
+            color="white"
+            value="REMOVE ALL"
+            width="3.5"
+            height="7"
+            scale="1 3 1"
+            position="-.5 0 0"
+          ></a-text>
+        </a-entity>
+      </a-entity>
 
       <!-- BOX CLUSTER -->
-      <a-entity id='box-cluster' position='0 0 0' rotation='0 45 0'>
-          <a-plane material ='src: #floor; repeat: 50 50; normal-map: #floor-NRM; normal-texture-repeat: 50 50; roughness: #floor-R'
-          scale='50 50 1'
-          body='type: static'
-          rotation='-90 0 0'
-          position='-10 0 -10'>
-          </a-plane>
+      <a-entity id="box-cluster" position="0 0 0" rotation="0 45 0">
+        <a-plane
+          material="src: #floor; repeat: 50 50; normal-map: #floor-NRM; normal-texture-repeat: 50 50; roughness: #floor-R"
+          scale="50 50 1"
+          body="type: static"
+          rotation="-90 0 0"
+          position="-10 0 -10"
+        >
+        </a-plane>
         <a-box
           body="type: static"
-          scale='10 1 10'
-          material= "src: #pyramid; normal-map: #pyramid-NRM; roughness: #pyramid-R"
+          scale="10 1 10"
+          material="src: #pyramid; normal-map: #pyramid-NRM; roughness: #pyramid-R"
           height="2"
           width="2.0"
           depth="2.0"
           position="0 0 -15"
         ></a-box>
         <a-box
-        scale='10 1 10'
+          scale="10 1 10"
           body="type: static"
           material="src: #pyramid;normal-map: #pyramid-NRM; roughness: #pyramid-R"
           height="1"
@@ -149,7 +230,7 @@
           position="0 1.5 -15"
         ></a-box>
         <a-box
-        scale='10 1 10'
+          scale="10 1 10"
           body="type: static"
           material="src: #pyramid; normal-map: #pyramid-NRM; roughness: #pyramid-R"
           height="1"
@@ -158,7 +239,7 @@
           position="0 2.5 -15"
         ></a-box>
         <a-box
-        scale='10 1 10'
+          scale="10 1 10"
           body="type: static"
           material="src: #pyramid; normal-map: #pyramid-NRM; roughness: #pyramid-R"
           height="1"
@@ -167,7 +248,7 @@
           position="0 3.5 -15"
         ></a-box>
         <a-box
-        scale='10 1 10'
+          scale="10 1 10"
           body="type: static"
           material="src: #pyramid; normal-map: #pyramid-NRM; roughness: #pyramid-R"
           height="1"
@@ -176,7 +257,7 @@
           position="0 4.5 -15"
         ></a-box>
         <a-box
-        scale='10 1 10'
+          scale="10 1 10"
           body="type: static"
           material="src: #pyramid; normal-map: #pyramid-NRM; roughness: #pyramid-R"
           height="1"
@@ -185,7 +266,7 @@
           position="0 5.5 -15"
         ></a-box>
         <a-box
-        scale='10 1 10'
+          scale="10 1 10"
           body="type: static"
           material="src: #pyramid; normal-map: #pyramid-NRM; roughness: #pyramid-R"
           height="1"
@@ -194,7 +275,7 @@
           position="0 6.5 -15"
         ></a-box>
         <a-box
-        scale='10 1 10'
+          scale="10 1 10"
           body="type: static"
           material="src: #pyramid; normal-map: #pyramid-NRM; roughness: #pyramid-R"
           height="1"
@@ -212,12 +293,15 @@
       <!-- SKY SPAWN -->
       <a-entity id="sphereSpawner"></a-entity>
       <a-entity id="chipSpawner"></a-entity>
-      <a-sky src='static/sky-large.png' width='100' height='100'></a-sky>
+      <a-sky src="static/desert-sky.jpg" radius="5000" side="double"></a-sky>
+      <!-- <a-sky color='skyblue' radius='25'></a-sky> -->
 
       <!---------------------- JAVASCRIPT ------------------------->
       <script>
         // -----------HELPERS---------- //
         $ = queryString => document.querySelector(queryString);
+        $$ = queryString => document.querySelectorAll(queryString);
+
         const randomRange = (min, max) => {
           return Math.random() * (max - min) + min;
         };
@@ -225,54 +309,67 @@
         let isRainingSpheres = false;
         let isRainingChips = false;
         // --------RESET STATE--------- //
-        $('#reset').addEventListener('click', () => {
-          $('a-scene').systems.physics.driver.world.gravity.y = -9.8
+        $("#reset").addEventListener("click", () => {
+          $("a-scene").systems.physics.driver.world.gravity.y = -9.8;
           isRainingSpheres = false;
           isRainingChips = false;
-        })
-
+        });
+        $("#remove-all").addEventListener("click", () => {
+          $("#sphereSpawner").innerHTML = "";
+          $("#chipSpawner").innerHTML = "";
+        });
         // -----GRAVITY WARPING----- //
-        $('#gravity-sign1').addEventListener('click', () => {
-          $('a-scene').systems.physics.driver.world.gravity.y -= 1
-        })
-        $('#gravity-sign2').addEventListener('click', () => {
-         $('a-scene').systems.physics.driver.world.gravity.y += 1
-        })
-        
-        
+        $("#gravity-sign1").addEventListener("click", () => {
+          $("a-scene").systems.physics.driver.world.gravity.y -= 1;
+        });
+        $("#gravity-sign2").addEventListener("click", () => {
+          $("a-scene").systems.physics.driver.world.gravity.y += 1;
+        });
+        $("#float").addEventListener("click", () => {
+          $("a-scene").systems.physics.driver.world.gravity.y = 0;
+          $$("a-sphere").forEach(sphere => {
+            sphere.setAttribute("velocity", "0");
+          });
+        });
+
         // -----------SPHERES----------- //
-        
+
         const sphereSpawn = () => {
           for (let n = 0; n < 2; n++) {
             const colors = [
               "red",
-              "lightblue",
+              "brown",
               "green",
               "navy",
               "lightcoral",
-              "orange"
+              "yellow",
+              "gray",
+              "turquoise",
+              "white"
             ];
             const color = `${
               colors[Math.floor(Math.random() * colors.length)]
             }`;
             const sphere = document.createElement("a-sphere");
+            sphere.addEventListener("click", event => {
+              console.log(event.target);
+              animateSphere(event);
+            });
             $("#sphereSpawner").appendChild(sphere);
-            
             sphere.setAttribute("bounce");
             sphere.setAttribute("color", color);
             sphere.setAttribute(
               "position",
-              `${randomRange(-20, 0)} ${randomRange(9, 11)} ${randomRange(
+              `${randomRange(-20, 0)} ${randomRange(12, 15)} ${randomRange(
                 -10,
                 0
               )}`
             );
-            sphere.setAttribute('scale', '.75 .75 .75')
+            sphere.setAttribute("scale", ".75 .75 .75");
             sphere.setAttribute("body", "type: dynamic");
           }
-        //   console.log(state.isRainingSpheres)
-    };
-      
+        };
+
         const rainSpheres = () => {
           interval = setInterval(() => {
             if (isRainingSpheres === true) {
@@ -280,23 +377,31 @@
             } else {
               clearInterval(interval);
             }
-          const sphereSpawner = $("#sphereSpawner");
-          while (sphereSpawner.childElementCount >= 50) {
-            sphereSpawner.firstChild.remove();
-          }
-          }, 100);
-        }
-      $('#rain-spheres').addEventListener('click', () => {
-          isRainingSpheres = !isRainingSpheres;
-          // let called = false
-          if (isRainingSpheres === true) {
-            // if (called === false) {
-              rainSpheres()
-              // called = true;
+            const sphereSpawner = $("#sphereSpawner");
+            while (sphereSpawner.childElementCount >= 100) {
+              sphereSpawner.firstChild.remove();
             }
-          
-        // }
-        })
+          }, 100);
+        };
+        $("#rain-spheres").addEventListener("click", () => {
+          isRainingSpheres = !isRainingSpheres;
+          if (isRainingSpheres === true) {
+            rainSpheres();
+          }
+        });
+
+        //let [sph_pos_x, sph_pos_y, sph_pos_z] = [0, -1.25, -5];
+
+        const animateSphere = event => {
+          let sphere_hue = randomNum(360);
+          // [sph_pos_x, sph_pos_y, sph_pos_z] = [
+          //   changeRot(sph_pos_x, 0),
+          //   changeRot(sph_pos_y, Math.sin(Date.now())),
+          //   changeRot(sph_pos_z, 0)
+          // ];
+          const color = `hsl(${sphere_hue}, 75%, 25%)`;
+          event.target.setAttribute("color", color);
+        };
 
         // ------------CHIPS-------------//
         const chipSpawn = () => {
@@ -311,7 +416,7 @@
             );
             chip.setAttribute(
               "position",
-              `${randomRange(-20, 0)} ${randomRange(9, 11)} ${randomRange(
+              `${randomRange(-20, 0)} ${randomRange(12, 15)} ${randomRange(
                 -10,
                 0
               )}`
@@ -320,59 +425,54 @@
             chip.setAttribute("body", "type: dynamic");
           }
         };
-        
+
         const rainChips = () => {
-        let chipInterval = setInterval(() => {
-          if (isRainingChips === true) {
-            chipSpawn();
-          } else {
-            clearInterval(chipInterval)
-          }
-          const chipSpawner = $("#chipSpawner");
-          while (chipSpawner.childElementCount > 20) {
-            chipSpawner.firstChild.remove();
-          }
-        }, 200);
-      }
-
-        $('#rain-chips').addEventListener('click', () => {
-          isRainingChips = !isRainingChips;
-          let called = false
-          if (isRainingChips === true) {
-            if (called === false) {
-              rainChips()
-              called = true;
+          let chipInterval = setInterval(() => {
+            if (isRainingChips === true) {
+              chipSpawn();
+            } else {
+              clearInterval(chipInterval);
             }
-        }
-        })
+            const chipSpawner = $("#chipSpawner");
+            while (chipSpawner.childElementCount > 35) {
+              chipSpawner.firstChild.remove();
+            }
+          }, 200);
+        };
 
-        //--FLOOR PLANES-- //
-        // const floorBoard = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-        // let floorStats = {
-        //   width: 5,
-        //   height: 5,
-        //   depth: 5
-        // };
-        // let floors = document.querySelector("#box-cluster");
-        // for (let i = 0; i < Math.sqrt(floorBoard.length); i++) {
-        //   for (let j = 0; j < Math.sqrt(floorBoard.length); j++) {
-        //     let pos_Z = -1 * i * floorStats.height - 4;
-        //     let pos_X = j * floorStats.width;
-        //     const pos_Y = 0;
+        $("#rain-chips").addEventListener("click", () => {
+          isRainingChips = !isRainingChips;
+          if (isRainingChips === true) {
+            rainChips();
+          }
+        });
 
-        //     let current = document.createElement("a-plane");
-        //     floors.appendChild(current);
-        //     current.setAttribute('material', 'src: #floor; repeat: 5 5; normal-map: #floor-NRM; normal-texture-repeat: 5 5; roughness: #floor-R')
-        //     current.setAttribute("body", "type: static");
-        //     current.setAttribute("rotation", "-90 0 0");
-        //     current.setAttribute('scale', '10 10 1')
-        //     current.setAttribute("width", `${floorStats.width}`);
-        //     current.setAttribute("height", `${floorStats.height}`);
-        //     floorBoard[i] == current.setAttribute("color", "lightgray");
-        //     current.setAttribute("position", `${pos_X} ${pos_Y} ${pos_Z}`);
+        //--FLOOR PLANES-- // Commented out for now
+        const floorBoard = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+        let floorStats = {
+          width: 5,
+          height: 5,
+          depth: 5
+        };
+        let floors = document.querySelector("#box-cluster");
+        for (let i = 0; i < Math.sqrt(floorBoard.length); i++) {
+          for (let j = 0; j < Math.sqrt(floorBoard.length); j++) {
+            let pos_Z = -1 * i * floorStats.height - 4;
+            let pos_X = j * floorStats.width;
+            const pos_Y = 0;
+
+            let current = document.createElement("a-plane");
+            floors.appendChild(current);
+            current.setAttribute('material', 'src: #floor; repeat: 5 5; normal-map: #floor-NRM; normal-texture-repeat: 5 5; roughness: #floor-R')
+            current.setAttribute("body", "type: static");
+            current.setAttribute("rotation", "-90 0 0");
+            current.setAttribute('scale', '10 10 1')
+            current.setAttribute("width", `${floorStats.width}`);
+            current.setAttribute("height", `${floorStats.height}`);
+            floorBoard[i] == current.setAttribute("color", "lightgray");
+            current.setAttribute("position", `${pos_X} ${pos_Y} ${pos_Z}`);
         //   }
         // }
-
       </script>
     </a-scene>
   </body>
